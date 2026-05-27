@@ -9,12 +9,61 @@ body{
     background-color: #333;
 }
 
-header{
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 10px;
+.container {
+    width: 100%;
+    margin: auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+.logo a{
+    font-family: 'Calistoga';
     font-size: 36px;
+    color: #FFF;
+    text-decoration: none;
+}
+.logo a span {
+    color: #FE6A0F; 
+}
+
+/* Header */
+
+header .container {
+    display: flex;
+    align-items: center;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    gap: 50px;
+}
+header nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+header nav .leftside {
+    display: flex;
+    flex: 1;
+}
+header nav li {
+    margin: 0 30px;
+}
+header nav li a {
+    color: #FFF;
+    text-decoration: none;
+}
+header nav li a:hover {
+    color: #ccc;
+}
+header nav .button {
+    display: block;
+    border: 1px solid #FFF;
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: #FFF;
+    text-decoration: none;
+}
+header nav .button:hover {
+    color: #ccc;
+    border-color: #ccc
 }
 
 footer{
