@@ -26,9 +26,6 @@ body{
 }
 
 /* Header */
-header {
-    background-color: #222;
-}
 
 header .container {
     display: flex;
@@ -66,7 +63,49 @@ header nav .button {
 }
 header nav .button:hover {
     color: #ccc;
-    border-color: #ccc
+    border-color: #ccc;
+}
+
+
+.hero .container {
+    display:flex;
+}
+.hero .leftside,
+.hero .rightside {
+    flex: 1;
+}
+.hero .leftside {
+    padding-bottom: 150px;
+}
+.hero .rightside {
+    text-align: center;
+}
+.hero .rightside img {
+    width: auto;
+    height: 600px;
+}
+.hero h1 {
+    font-family: 'Calistoga';
+    font-size: 72px;
+    line-height: 74px;
+    margin-top: 50px;
+}
+.hero p {
+    line-height: 26px;
+    font-size: 20px;
+    margin: 40px 0px;
+}
+.hero .button {
+    display: inline-block;
+    background-color: var(--orange-color);
+    font-weight: 500px;
+    color: #FFF;
+    padding: 15px 80px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.hero .button:hover {
+    opacity: 0.8;
 }
 
 footer{
