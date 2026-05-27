@@ -71,7 +71,9 @@ header nav .button:hover {
     border-color: #ccc;
 }
 
-
+h2{
+    color:orange;
+}
 .hamburger .container {
     display:flex;
 }
