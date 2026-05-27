@@ -8,7 +8,9 @@ header{
     padding: 10px;
     text-align: center;
 }
-
+header:hover{
+    background-color: #555;
+}
 footer{
     background-color: #333;
     color: white;
