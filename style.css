@@ -26,6 +26,9 @@ body{
 }
 
 /* Header */
+header {
+    background-color: #222;
+}
 
 header .container {
     display: flex;
