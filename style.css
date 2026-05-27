@@ -27,7 +27,10 @@ body{
 
 /* Header */
 header{
+    position: sticky;
+    top: 0;
     background-color: #222;
+    padding: 0 20px;
 }
 header .container {
     display: flex;
