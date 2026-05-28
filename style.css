@@ -1,37 +1,49 @@
-*/ {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif
+    font-family: 'Roboto', sans-serif;
 }
-body{
+
+body {
     margin: 0;
     background-color: #333;
 }
 
+h1, p {
+    color: white;
+}
+
+h2 {
+    color: orange;
+}
+
 .container {
     width: 100%;
-    margin: auto;
     max-width: 1200px;
-    padding: 0 20px;
+    margin: 0 auto;
+    padding: 20px;
 }
-.logo a{
-    font-family: 'Calistoga';
+
+.logo a {
+    font-family: 'Calistoga', serif;
     font-size: 36px;
     color: #FFF;
     text-decoration: none;
 }
+
 .logo a span {
-    color: #FE6A0F; 
+    color: #FE6A0F;
 }
 
-/* Header */
-header{
+header {
     position: sticky;
     top: 0;
     background-color: #222;
     padding: 0 20px;
+    z-index: 10;
 }
+
 header .container {
     display: flex;
     align-items: center;
@@ -39,25 +51,32 @@ header .container {
     padding-bottom: 45px;
     gap: 50px;
 }
+
 header nav {
     flex: 1;
     display: flex;
     align-items: center;
 }
+
 header nav .leftside {
     display: flex;
     flex: 1;
+    list-style: none;
 }
+
 header nav li {
     margin: 0 30px;
 }
+
 header nav li a {
     color: #FFF;
     text-decoration: none;
 }
+
 header nav li a:hover {
     color: #ccc;
 }
+
 header nav .button {
     display: block;
     border: 1px solid #FFF;
@@ -66,71 +85,143 @@ header nav .button {
     color: #FFF;
     text-decoration: none;
 }
+
 header nav .button:hover {
     color: #ccc;
     border-color: #ccc;
 }
 
-h2{
-    color:orange;
-}
 .hamburger .container {
-    display:flex;
+    display: flex;
 }
+
 .hamburger .leftside,
 .hamburger .rightside {
     flex: 1;
 }
+
 .hamburger .leftside {
     padding-bottom: 150px;
 }
+
 .hamburger .rightside {
     text-align: center;
 }
+
 .hamburger .rightside img {
     width: auto;
     height: 600px;
 }
+
 .hamburger h1 {
-    font-family: 'Calistoga';
+    font-family: 'Calistoga', serif;
     font-size: 72px;
     line-height: 74px;
     margin-top: 50px;
 }
+
 .hamburger p {
     line-height: 26px;
     font-size: 20px;
-    margin: 40px 0px;
+    margin: 40px 0;
 }
+
 .hamburger .button {
     display: inline-block;
     background-color: #FE6A0F;
-    font-weight: 500px;
+    font-weight: 500;
     color: #FFF;
     padding: 15px 80px;
     border-radius: 5px;
     text-decoration: none;
 }
+
 .hamburger .button:hover {
     opacity: 0.8;
 }
 
+.titulo {
+    background-color: #111;
+}
+
+.hamburguers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
 .card {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
-footer{
+
+.card:hover {
+    background-color: #e9ecef;
+    border-color: #ccc;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.card.destaque {
+    animation: pulseColor 3s ease-in-out infinite;
+}
+
+.card.hover-animado:hover {
+    animation: colorShift 0.5s forwards;
+}
+
+@keyframes pulseColor {
+    0% {
+        background-color: #f4f4f4;
+        border-color: #ddd;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    50% {
+        background-color: #fff9e6;
+        border-color: #ffc107;
+        box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+    }
+    100% {
+        background-color: #f4f4f4;
+        border-color: #ddd;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+}
+
+@keyframes colorShift {
+    0% { background-color: #f4f4f4; }
+    50% { background-color: #e2e8f0; }
+    100% { background-color: #cbd5e1; border-color: #94a3b8; }
+}
+
+footer {
     background-color: #222;
     color: white;
     text-align: center;
     padding: 10px;
-}
-h1{
-    color:white;
-}
-p{
-    color:white;
 }
