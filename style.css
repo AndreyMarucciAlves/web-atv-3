@@ -1,4 +1,8 @@
-* {
+/* 
+estilização geral do site, utilizando reset para remover margens e padding padrões, e box-sizing para facilitar o controle de espaçamento dos elementos.
+Novamente, sei que não foi ensinado sobre mas aprendi de ser uma boa pratica para evitar problemas de layout, principalmente em projetos maiores. (Novaes)
+*/
+*/{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -7,7 +11,7 @@
 
 body {
     margin: 0;
-    background-color: #333;
+    background-color: #121212;
 }
 
 h1, p {
@@ -39,11 +43,14 @@ h2 {
 header {
     position: sticky;
     top: 0;
-    background-color: #222;
+    background-color: #1e1e1e;
     padding: 0 20px;
     z-index: 10;
+    border-bottom: 1px solid #2a2a2a;
 }
-
+/* 
+    utilizado flex para organizar os elementos do header, alinhando o logo e a navegação horizontalmente, e garantindo que a navegação ocupe o espaço restante.
+*/
 header .container {
     display: flex;
     align-items: center;
@@ -52,6 +59,9 @@ header .container {
     gap: 50px;
 }
 
+/* 
+    mesma estratégia para organizar os elementos da navegação, alinhando os itens do menu à esquerda e o botão à direita, utilizando flex para garantir que o menu ocupe o espaço restante. 
+*/
 header nav {
     flex: 1;
     display: flex;
@@ -141,15 +151,22 @@ header nav .button:hover {
 }
 
 .titulo {
-    background-color: #111;
+    background-color: #1e1e1e;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
 }
-
+/* 
+    utilizado grid para organizar os cards de hamburguers, permitindo que eles se ajustem automaticamente ao tamanho da tela.
+*/
 .hamburguers {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
+/* 
+    estilização dos cards, utilizando flex para organizar os elementos dentro de cada card, alinhando-os.
+*/
 .card {
     background-color: #f4f4f4;
     border: 1px solid #ddd;
@@ -164,9 +181,15 @@ header nav .button:hover {
 }
 
 .card:hover {
-    background-color: #e9ecef;
+    background-color: #e0e0e0;
     border-color: #ccc;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* 
+    creio que não foi ensinado tambem, porem tentei fazer a mesma funcionalidade com -:
+    margin-top: -5px;
+    margin-bottom: 5px;
+    e fica uma "animação" travada, utilizando transform consegui um efeito mais fluida e consistente, sem depender de margens fixas.
+    */
     transform: translateY(-5px);
 }
 
@@ -194,7 +217,9 @@ header nav .button:hover {
 .card.hover-animado:hover {
     animation: colorShift 0.5s forwards;
 }
-
+/* 
+    animações dos cards
+*/
 @keyframes pulseColor {
     0% {
         background-color: #f4f4f4;
@@ -204,7 +229,7 @@ header nav .button:hover {
     50% {
         background-color: #fff9e6;
         border-color: #ffc107;
-        box-shadow: 0 0 15px rgba(255, 193, 7, 0.4);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
     }
     100% {
         background-color: #f4f4f4;
@@ -215,19 +240,71 @@ header nav .button:hover {
 
 @keyframes colorShift {
     0% { background-color: #f4f4f4; }
-    50% { background-color: #e2e8f0; }
-    100% { background-color: #cbd5e1; border-color: #94a3b8; }
+    50% { background-color: #e0e0e0; }
+    100% { background-color: #cccccc; border-color: #999999; }
 }
-
+/* 
+estilização do footer, utilizando flex para organizar os elementos horizontalmente.
+*/
 footer {
-    background-color: #222;
+    background-color: #0a0a0a;
     color: white;
-    text-align: center;
-    padding: 10px;
+    padding: 40px 0 0 0;
 }
 
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.footer-info h3,
+.footer-social h3 {
+    color: #FE6A0F;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-info p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-social a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #FE6A0F;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background-color: #050505;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #666;
+}
+/* 
+configuações de responsividade
+*/
 @media (max-width: 768px) {
     /* Ajusta o Header para ficar em coluna */
+
     header .container {
         flex-direction: column;
         padding-top: 20px;
@@ -258,5 +335,12 @@ footer {
         height: auto;
         width: 100%;
         max-width: 400px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+        align-items: center;
     }
 }
