@@ -1,9 +1,9 @@
-<!-- 
-    Projeto: UniBurguers
-    Desenvolvedores: Andrey Marucci Alves e João Vitor Novaes
+<!--Em dupla
+    1- Andrey Marucci Alves
+    2- João Vitor Novaes
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,25 +15,34 @@
 </head>
 <body>
     <header>
+        <!-- 
+        Cabeçalho do site.
+        Utilizado a class container para centralizar o conteúdo e limitar a largura do conteúdo.
+        -->
         <div class="container">
             <div class="logo">
+                <!-- utilizado a tag span para conseguir customizar o ponto -->
                 <a href="">Uni <span>•</span> Burguers</a>
             </div>
             <nav>
+                <!-- separação de lado esquerdo e direto utilizando flex -->
                 <ul class="leftside">
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">Burguers</a></li>
-                    <li><a href="">Contato</a></li>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#showroom--hamburguers">Burguers</a></li>
+                    <li><a href="#contatos">Contatos</a></li>
                 </ul>
                 <div class="rightside">
+                    <!-- sei que não ensinou a fazer botão, porém gosto de fazer utilizando o <a> (Novaes) -->
                     <a href="" class="button">Fazer pedido</a>
                 </div>
             </nav>
         </div>
     </header>
     
-    <section class="hamburger">
+    <!-- section para exibir a frase de efeito do site -->
+    <section class="hamburger" id="home">
         <div class="container">
+            <!-- mesma estrategia para separar os lados -->
             <div class="leftside">
                 <h1>O Hamburguer mais delicioso</h1>
                 <p>A primeira hamburgueria virtual que voce faz pedido online e come burguer atraves do computador</p>
@@ -46,6 +55,7 @@
     </section>
     
     <section>
+        <!-- section apenas para titular o showroom de hamburguers -->
         <div class="titulo">
             <div class="container">
                 <h1>Conheça nossos Burgers:</h1>
@@ -55,7 +65,9 @@
     
     <main>
         <div class="container">
-            <div class="hamburguers">
+            <!-- parte principal do site, utilizado grid para organização dos cards -->
+            <div class="hamburguers" id="showroom--hamburguers">
+                <!-- utilizado flex para orgazinação dos conteudos dos cards -->
                 <div class="card destaque">
                     <img src="images/burgers/burger1.png" alt="Burguer 1">
                     <h2>Cheese Burger</h2>
@@ -74,14 +86,30 @@
                 <div class="card destaque">
                     <img src="images/burgers/burger4.png" alt="Burguer 4">
                     <h2>Veggie Burger</h2>
-                    <p>Delicioso veggie burger com hambúrguer de mortadela, queijo e molho especial.</p>
+                    <p>Delicioso veggie burger com hambúrguer com mortadela, queijo e molho especial.</p>
                 </div>
             </div>
         </div>
     </main>
-    
-    <footer>
-        <p>&copy; 2026 UniBurguers. Todos os direitos reservados e feito com carinho por Andrey Marucci Alves e João Vitor Novaes</p>
+    <!-- criado um footer basico com contatos e copyright do site -->
+    <footer id="contatos">
+        <div class="container footer-content">
+            <!-- utiizado flex para separar os elementos -->
+            <div class="footer-info">
+                <h3>Fale Conosco</h3>
+                <p>Email: contato@uniburguers.com.br</p>
+                <p>Telefone: (11) 99999-9999</p>
+            </div>
+            <div class="footer-social">
+                <h3>Siga a gente</h3>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 UniBurguers. Todos os direitos reservados. Feito por Andrey Marucci Alves e João Vitor Novaes</p>
+        </div>
     </footer>
 </body>
 </html>
