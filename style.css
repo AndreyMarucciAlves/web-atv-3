@@ -225,3 +225,38 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
+@media (max-width: 768px) {
+    /* Ajusta o Header para ficar em coluna */
+    header .container {
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        gap: 20px;
+    }
+    
+    header nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hamburger .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hamburger .leftside {
+        padding-bottom: 30px; 
+    }
+
+    .hamburger h1 {
+        font-size: 48px; 
+        line-height: 52px;
+    }
+
+    .hamburger .rightside img {
+        height: auto;
+        width: 100%;
+        max-width: 400px;
+    }
+}
