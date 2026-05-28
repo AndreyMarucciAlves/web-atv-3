@@ -1,0 +1,346 @@
+/* 
+estilização geral do site, utilizando reset para remover margens e padding padrões, e box-sizing para facilitar o controle de espaçamento dos elementos.
+Novamente, sei que não foi ensinado sobre mas aprendi de ser uma boa pratica para evitar problemas de layout, principalmente em projetos maiores. (Novaes)
+*/
+*/{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #121212;
+}
+
+h1, p {
+    color: white;
+}
+
+h2 {
+    color: orange;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo a {
+    font-family: 'Calistoga', serif;
+    font-size: 36px;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.logo a span {
+    color: #FE6A0F;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #1e1e1e;
+    padding: 0 20px;
+    z-index: 10;
+    border-bottom: 1px solid #2a2a2a;
+}
+/* 
+    utilizado flex para organizar os elementos do header, alinhando o logo e a navegação horizontalmente, e garantindo que a navegação ocupe o espaço restante.
+*/
+header .container {
+    display: flex;
+    align-items: center;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    gap: 50px;
+}
+
+/* 
+    mesma estratégia para organizar os elementos da navegação, alinhando os itens do menu à esquerda e o botão à direita, utilizando flex para garantir que o menu ocupe o espaço restante. 
+*/
+header nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+header nav .leftside {
+    display: flex;
+    flex: 1;
+    list-style: none;
+}
+
+header nav li {
+    margin: 0 30px;
+}
+
+header nav li a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+header nav li a:hover {
+    color: #ccc;
+}
+
+header nav .button {
+    display: block;
+    border: 1px solid #FFF;
+    padding: 15px 30px;
+    border-radius: 5px;
+    color: #FFF;
+    text-decoration: none;
+}
+
+header nav .button:hover {
+    color: #ccc;
+    border-color: #ccc;
+}
+
+.hamburger .container {
+    display: flex;
+}
+
+.hamburger .leftside,
+.hamburger .rightside {
+    flex: 1;
+}
+
+.hamburger .leftside {
+    padding-bottom: 150px;
+}
+
+.hamburger .rightside {
+    text-align: center;
+}
+
+.hamburger .rightside img {
+    width: auto;
+    height: 600px;
+}
+
+.hamburger h1 {
+    font-family: 'Calistoga', serif;
+    font-size: 72px;
+    line-height: 74px;
+    margin-top: 50px;
+}
+
+.hamburger p {
+    line-height: 26px;
+    font-size: 20px;
+    margin: 40px 0;
+}
+
+.hamburger .button {
+    display: inline-block;
+    background-color: #FE6A0F;
+    font-weight: 500;
+    color: #FFF;
+    padding: 15px 80px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.hamburger .button:hover {
+    opacity: 0.8;
+}
+
+.titulo {
+    background-color: #1e1e1e;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+}
+/* 
+    utilizado grid para organizar os cards de hamburguers, permitindo que eles se ajustem automaticamente ao tamanho da tela.
+*/
+.hamburguers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* 
+    estilização dos cards, utilizando flex para organizar os elementos dentro de cada card, alinhando-os.
+*/
+.card {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* 
+    creio que não foi ensinado tambem, porem tentei fazer a mesma funcionalidade com -:
+    margin-top: -5px;
+    margin-bottom: 5px;
+    e fica uma "animação" travada, utilizando transform consegui um efeito mais fluida e consistente, sem depender de margens fixas.
+    */
+    transform: translateY(-5px);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.card.destaque {
+    animation: pulseColor 3s ease-in-out infinite;
+}
+
+.card.hover-animado:hover {
+    animation: colorShift 0.5s forwards;
+}
+/* 
+    animações dos cards
+*/
+@keyframes pulseColor {
+    0% {
+        background-color: #f4f4f4;
+        border-color: #ddd;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    50% {
+        background-color: #fff9e6;
+        border-color: #ffc107;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+    100% {
+        background-color: #f4f4f4;
+        border-color: #ddd;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+}
+
+@keyframes colorShift {
+    0% { background-color: #f4f4f4; }
+    50% { background-color: #e0e0e0; }
+    100% { background-color: #cccccc; border-color: #999999; }
+}
+/* 
+estilização do footer, utilizando flex para organizar os elementos horizontalmente.
+*/
+footer {
+    background-color: #0a0a0a;
+    color: white;
+    padding: 40px 0 0 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.footer-info h3,
+.footer-social h3 {
+    color: #FE6A0F;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-info p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-social a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #FE6A0F;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background-color: #050505;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #666;
+}
+/* 
+configuações de responsividade
+*/
+@media (max-width: 768px) {
+    /* Ajusta o Header para ficar em coluna */
+
+    header .container {
+        flex-direction: column;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        gap: 20px;
+    }
+    
+    header nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hamburger .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hamburger .leftside {
+        padding-bottom: 30px; 
+    }
+
+    .hamburger h1 {
+        font-size: 48px; 
+        line-height: 52px;
+    }
+
+    .hamburger .rightside img {
+        height: auto;
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+        align-items: center;
+    }
+}
